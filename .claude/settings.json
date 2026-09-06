@@ -7,7 +7,15 @@
       "Bash(pdftoppm -f 2 -l 2 -r 200 -png /home/andas/Downloads/OneScene_Bench-2.pdf page)",
       "Bash(pdftoppm -f 2 -l 2 -r 200 -png /home/andas/Downloads/OneScene_Bench-2.pdf /tmp/claude-23769/-home-andas-Documents-website-anurag-198-github-io/8bcb973b-b843-4a86-b3d6-e5522eadc801/scratchpad/page)",
       "Bash(python3 -c ' *)",
-      "Bash(timeout 90 chromium --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1000,1400 --screenshot=/tmp/claude-23769/-home-andas-Documents-website-anurag-198-github-io/8bcb973b-b843-4a86-b3d6-e5522eadc801/scratchpad/site.png index.html)"
+      "Bash(timeout 90 chromium --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1000,1400 --screenshot=/tmp/claude-23769/-home-andas-Documents-website-anurag-198-github-io/8bcb973b-b843-4a86-b3d6-e5522eadc801/scratchpad/site.png index.html)",
+      "Bash(python3 -)",
+      "Bash(git rm *)",
+      "Bash(git reset *)",
+      "Bash(git checkout *)",
+      "Bash(grep -n \"href =\\\\|Bernt Schiele</a>$\\\\|efficiency\\\\.\\\\|tbody></tbody>\\\\|andyzeng\\\\|yilundu\\\\|utlize\\\\|Boundary\\\\|we propose to leverage\\\\|<em>arxiv</em>\\\\|Saarbrucken\\\\|AnuragDas.png\" index.html)",
+      "Bash(pkill -f \"http.server 8352\")",
+      "Bash(python3 -c \"import numpy; print\\('numpy OK'\\)\")",
+      "WebFetch(domain:arxiv.org)"
     ]
   }
 }
