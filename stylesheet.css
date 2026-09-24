@@ -70,8 +70,14 @@ a {
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: #c2610f;
   text-decoration: none;
+}
+
+/* Coauthors without a homepage are <a> with no href - not links, so not blue */
+a:not([href]) {
+  color: inherit;
+  cursor: default;
 }
 
 body,
@@ -81,7 +87,8 @@ tr,
 p,
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 td {
@@ -89,18 +96,27 @@ td {
 }
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
+  font-weight: 600;
 }
 
 papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.pub-body a[href]:hover papertitle,
+.pub-body a[href]:focus-visible papertitle,
+.thesis-body a[href]:hover papertitle,
+.thesis-body a[href]:focus-visible papertitle {
+  color: #c2610f;
 }
 
 name {
@@ -131,4 +147,112 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+/* Short Biography: logo gutter + role @ place + detail line */
+.bio-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.bio-logo {
+  flex: 0 0 72px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio-logo img {
+  max-width: 72px;
+  max-height: 44px;
+  object-fit: contain;
+}
+
+.bio-meta {
+  line-height: 1.6;
+}
+
+.bio-role {
+  font-weight: 700;
+}
+
+.bio-sep {
+  color: #888;
+  padding: 0 5px;
+}
+
+.bio-detail {
+  color: #888;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .bio-item { gap: 12px; }
+  .bio-logo { flex: 0 0 56px; height: 34px; }
+  .bio-logo img { max-width: 56px; max-height: 34px; }
+}
+
+/* One-line affiliation under the name */
+p.affiliation {
+  text-align: left;
+  font-size: 15px;
+  color: #555;
+  margin-top: -8px;
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+  margin: 0 0 18px;
+}
+
+/* Layout cells, moved out of inline styles so they can reflow */
+.header-table td.header-text { padding: 2.5%; width: 63%; vertical-align: middle; }
+.header-table td.header-photo { padding: 2.5%; width: 40%; max-width: 40%; }
+
+.pub-table td.pub-fig { padding: 20px; width: 33%; vertical-align: middle; }
+.pub-table td.pub-body { padding: 20px; width: 67%; vertical-align: middle; }
+.pub-table td.pub-fig img { max-width: 100%; }
+
+.thesis-table td.thesis-label { padding: 20px; width: 30%; vertical-align: middle; }
+.thesis-table td.thesis-body { padding: 20px; width: 70%; vertical-align: middle; }
+
+/* Phones: drop table layout entirely so nothing forces the page wider than the screen */
+@media (max-width: 600px) {
+  .header-table td,
+  .pub-table td,
+  .thesis-table td {
+    display: block;
+    width: auto;
+    max-width: none;
+    padding: 10px 0;
+  }
+
+  .header-table td.header-photo { max-width: 260px; }
+  .pub-table td.pub-fig,
+  .pub-table td.pub-body {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    padding: 8px 20px;
+  }
+
+  .pub-table td.pub-fig img {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+  .thesis-table td.thesis-label { padding-bottom: 0; font-weight: 700; }
 }
